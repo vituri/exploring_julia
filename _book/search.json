@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Exploring Julia",
+    "section": "",
+    "text": "Preface\nThis book is a collection of things I’ve learned while exploring Julia; it is full of examples and recommendation of packages.\nI’ll try to solve many problems to clarify some principles"
+  },
+  {
+    "objectID": "index.html#vectors-and-functions",
+    "href": "index.html#vectors-and-functions",
+    "title": "Exploring Julia",
+    "section": "Vectors and functions",
+    "text": "Vectors and functions"
+  },
+  {
+    "objectID": "index.html#dataframes",
+    "href": "index.html#dataframes",
+    "title": "Exploring Julia",
+    "section": "Dataframes",
+    "text": "Dataframes"
+  },
+  {
+    "objectID": "index.html#manipulating-images",
+    "href": "index.html#manipulating-images",
+    "title": "Exploring Julia",
+    "section": "Manipulating images",
+    "text": "Manipulating images"
+  },
+  {
+    "objectID": "index.html#ocr-to-read-texts-in-images",
+    "href": "index.html#ocr-to-read-texts-in-images",
+    "title": "Exploring Julia",
+    "section": "OCR to read texts in images",
+    "text": "OCR to read texts in images"
+  },
+  {
+    "objectID": "index.html#observables",
+    "href": "index.html#observables",
+    "title": "Exploring Julia",
+    "section": "Observables",
+    "text": "Observables"
+  },
+  {
+    "objectID": "index.html#flux-and-lux",
+    "href": "index.html#flux-and-lux",
+    "title": "Exploring Julia",
+    "section": "Flux and Lux",
+    "text": "Flux and Lux"
+  },
+  {
+    "objectID": "index.html#dataloaders",
+    "href": "index.html#dataloaders",
+    "title": "Exploring Julia",
+    "section": "Dataloaders",
+    "text": "Dataloaders"
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "Exploring Julia",
+    "section": "??",
+    "text": "??"
+  },
+  {
+    "objectID": "index.html#mapper-like-methods",
+    "href": "index.html#mapper-like-methods",
+    "title": "Exploring Julia",
+    "section": "Mapper-like methods",
+    "text": "Mapper-like methods"
+  },
+  {
+    "objectID": "index.html#persistent-homology",
+    "href": "index.html#persistent-homology",
+    "title": "Exploring Julia",
+    "section": "Persistent homology",
+    "text": "Persistent homology"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  }
+]

@@ -1,0 +1,38 @@
+# Preface {.unnumbered}
+
+This book is a collection of things I've learned while exploring Julia; it 
+is full of examples and recommendation of packages.
+
+I'll try to solve many problems to clarify some principles
+
+# Basics
+
+## Vectors and functions
+
+## Dataframes
+
+# Images
+
+## Manipulating images
+
+## OCR to read texts in images
+
+# Ploting
+
+## Observables
+
+# Neural networks
+
+## Flux and Lux
+
+## Dataloaders
+
+# Machine learning
+
+## ??
+
+# Topological Data Analysis
+
+## Mapper-like methods
+
+## Persistent homology
