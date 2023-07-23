@@ -1,0 +1,15 @@
+::: {.callout-note icon=false}
+## Problem (Project Euler problem 1)
+
+Find the sum of all the multiples of $3$ or $5$ below $1000$
+:::
+
+::: {.callout-tip icon=false}
+## Solution
+
+```{julia}
+v = [x for x ∈ 1:999 if (x % 3 == 0 || x % 5 == 0)]
+sum(v)
+```
+
+:::

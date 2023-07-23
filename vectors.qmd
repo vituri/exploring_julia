@@ -1,0 +1,148 @@
+# Vectors
+
+Vectors are one of the fundamental blocks of Julia programming. They are sequences of objects (strings, 
+numbers, dates, etc.)
+
+There are many ways to define vectors in Julia.
+
+We can put the numbers 1, 2 and 3 together in a vector as follows:
+
+```{julia}
+[1, 2, 3]
+```
+
+We can also specify the beginning and ending of the sequence like this:
+
+```{julia}
+[1:7;]
+```
+
+and we can even go in steps of size different than 1:
+
+```{julia}
+[1:2:11;]
+```
+
+Note the `;` symbol after 1:7; it is necessary to transform the object into a true vector,
+instead of a `range` object. We will talk more about `types` later.
+
+::: {.callout-note icon=false}
+## Problem 
+
+Find the sum of all odd numbers from 1 to 999.
+
+:::
+
+::: {.callout-tip icon=false}
+## Solution
+
+```{julia}
+v = [1:2:999;]
+sum(v)
+```
+:::
+
+## List comprehensions
+
+List comprehensions are a nice way to write vectors:
+
+```{julia}
+[x^2 for x ∈ 1:5]
+```
+
+and they resemble a lot the mathematical notation of sets:
+
+$$
+\{x^2 \; \text{for } x \in \{1, \ldots, 5 \} \}
+$$
+
+You can specify conditions on list comprehensions:
+
+```{julia}
+[x^2 for x ∈ 1:10 if (x % 2 == 0)]
+```
+
+::: {.callout-note icon=false}
+## Problem (Project Euler problem 1)
+
+Find the sum of all the multiples of $3$ or $5$ below $1000$.
+:::
+
+::: {.callout-tip icon=false}
+## Solution
+
+```{julia}
+v = [x for x ∈ 1:999 if (x % 3 == 0 || x % 5 == 0)]
+sum(v)
+```
+
+:::
+
+
+## Broadcasting
+
+Broadcast is apply a function to each element of a vector (or iterable object).
+
+Suppose we have this function:
+
+```{julia}
+square(x::Integer) = x^2;
+```
+
+and 
+
+```{julia}
+v = [1:5;]
+```
+
+Then we can apply it to each element of a vector in the following ways:
+
+- using list comprehensions:
+
+```{julia}
+[square(x) for x ∈ v]
+```
+
+- using the `map` operator:
+
+```{julia}
+map(square, v)
+```
+
+- using the broadcast operator with the dot syntax:
+
+```{julia}
+square.(v)
+```
+
+For functions that are called by a symbol (like `+`, `^`, etc.) we have to put the dot before the symbol, like this:
+
+```{julia}
+[1:5;] .* 5
+```
+
+::: {.callout-note icon=false}
+## Problem (Project Euler problem 6)
+
+<p> The sum of the squares of the first ten natural numbers is
+$1^2+ 2 ^2+ \dots + 10^2 = 385.$</p>
+<p>The square of the sum of the first ten natural numbers is
+$(1+ 2+ \dots + 10)^2 = 3025.$</p>
+</p>Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is $3025-385 = 2640.$</p>
+
+</p> Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum. </p>
+:::
+
+::: {.callout-tip icon=false}
+## Solution
+
+```{julia}
+sum(1:100)^2 - sum((1:100).^2)
+```
+:::
+
+
+## Operations on vectors
+
+We can do many things with vectors.
+

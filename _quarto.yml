@@ -3,12 +3,15 @@ project:
 
 book:
   title: "Exploring Julia"
-  subtitle: "Or: why should I learn this fancy new language?"
+  subtitle: "A problem-solving approach"
   author: "G. Vituri"
   date: "2023-06-27"
   chapters:
     - index.qmd
     - intro.qmd
+    - vectors.qmd
+    - functions.qmd
+    - performance.qmd
     - summary.qmd
     - references.qmd
 

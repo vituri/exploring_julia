@@ -86,7 +86,7 @@
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "2  Summary",
+    "title": "5  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
   },
@@ -96,5 +96,54 @@
     "title": "References",
     "section": "",
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "vectors.html#list-comprehensions",
+    "href": "vectors.html#list-comprehensions",
+    "title": "2  Vectors",
+    "section": "2.1 List comprehensions",
+    "text": "2.1 List comprehensions\nList comprehensions are a nice way to write vectors:\n\n[x^2 for x ∈ 1:5]\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\n\n\nand they resemble a lot the mathematical notation of sets:\n\\[\n\\{x^2 \\; \\text{for } x \\in \\{1, \\ldots, 5 \\} \\}\n\\]\nYou can specify conditions on list comprehensions:\n\n[x^2 for x ∈ 1:10 if (x % 2 == 0)]\n\n5-element Vector{Int64}:\n   4\n  16\n  36\n  64\n 100\n\n\n\n\n\n\n\n\nProblem (Project Euler problem 1)\n\n\n\nFind the sum of all the multiples of \\(3\\) or \\(5\\) below \\(1000\\).\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\nv = [x for x ∈ 1:999 if (x % 3 == 0 || x % 5 == 0)]\nsum(v)\n\n233168"
+  },
+  {
+    "objectID": "vectors.html#broadcasting",
+    "href": "vectors.html#broadcasting",
+    "title": "2  Vectors",
+    "section": "2.2 Broadcasting",
+    "text": "2.2 Broadcasting\nBroadcast is apply a function to each element of a vector (or iterable object).\nSuppose we have this function:\n\nsquare(x::Integer) = x^2;\n\nand\n\nv = [1:5;]\n\n5-element Vector{Int64}:\n 1\n 2\n 3\n 4\n 5\n\n\nThen we can apply it to each element of a vector in the following ways:\n\nusing list comprehensions:\n\n\n[square(x) for x ∈ v]\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\n\n\n\nusing the map operator:\n\n\nmap(square, v)\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\n\n\n\nusing the broadcast operator with the dot syntax:\n\n\nsquare.(v)\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\n\n\nFor functions that are called by a symbol (like +, ^, etc.) we have to put the dot before the symbol, like this:\n\n[1:5;] .* 5\n\n5-element Vector{Int64}:\n  5\n 10\n 15\n 20\n 25\n\n\n\n\n\n\n\n\nProblem (Project Euler problem 6)\n\n\n\n\nThe sum of the squares of the first ten natural numbers is \\(1^2+ 2 ^2+ \\dots + 10^2 = 385.\\)\n\n\nThe square of the sum of the first ten natural numbers is \\((1+ 2+ \\dots + 10)^2 = 3025.\\)\n\n\nHence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is \\(3025-385 = 2640.\\)\n\n\nFind the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\nsum(1:100)^2 - sum((1:100).^2)\n\n25164150"
+  },
+  {
+    "objectID": "vectors.html#operations-on-vectors",
+    "href": "vectors.html#operations-on-vectors",
+    "title": "2  Vectors",
+    "section": "2.3 Operations on vectors",
+    "text": "2.3 Operations on vectors\nWe can do many things with vectors."
+  },
+  {
+    "objectID": "functions.html#keywords",
+    "href": "functions.html#keywords",
+    "title": "3  Functions",
+    "section": "3.1 Keywords",
+    "text": "3.1 Keywords"
+  },
+  {
+    "objectID": "functions.html#type-system",
+    "href": "functions.html#type-system",
+    "title": "3  Functions",
+    "section": "3.2 Type system",
+    "text": "3.2 Type system"
+  },
+  {
+    "objectID": "performance.html#measuring-performance",
+    "href": "performance.html#measuring-performance",
+    "title": "4  Performance",
+    "section": "4.1 Measuring performance",
+    "text": "4.1 Measuring performance"
+  },
+  {
+    "objectID": "performance.html#common-pitfalls",
+    "href": "performance.html#common-pitfalls",
+    "title": "4  Performance",
+    "section": "4.2 Common pitfalls",
+    "text": "4.2 Common pitfalls"
   }
 ]

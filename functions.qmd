@@ -1,0 +1,8 @@
+# Functions
+
+Functions are a way to reutilize code.
+
+## Keywords
+
+## Type system
+
