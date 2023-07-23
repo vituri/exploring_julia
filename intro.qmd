@@ -1,9 +1,7 @@
-# Introduction
+# Installation
 
-This is a book created from markdown and executable code.
+use juliaup
 
-See @knuth84 for additional discussion of literate programming.
+vscode
 
-```{r}
-1 + 1
-```
+search for help

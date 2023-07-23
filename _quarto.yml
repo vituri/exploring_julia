@@ -15,8 +15,11 @@ book:
     - functions.qmd
     - dataframes.qmd
     - performance.qmd
+
+    - part: "Graphs"
     - part: "Machine learning"
     - part: "Neural networks"
+
     - references.qmd
 
 bibliography: references.bib
