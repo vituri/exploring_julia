@@ -1,7 +1,6 @@
 # Vectors
 
-Vectors are one of the fundamental blocks of Julia programming. They are sequences of objects (strings, 
-numbers, dates, etc.)
+Vectors are one of the fundamental blocks of Julia programming. They are sequences of objects (strings, numbers, dates, etc.)
 
 There are many ways to define vectors in Julia.
 
@@ -11,7 +10,7 @@ We can put the numbers 1, 2 and 3 together in a vector as follows:
 [1, 2, 3]
 ```
 
-We can also specify the beginning and ending of the sequence like this:
+We can also specify the beginning and ending of a sequence of integers like this:
 
 ```{julia}
 [1:7;]
@@ -23,8 +22,7 @@ and we can even go in steps of size different than 1:
 [1:2:11;]
 ```
 
-Note the `;` symbol after 1:7; it is necessary to transform the object into a true vector,
-instead of a `range` object. We will talk more about `types` later.
+Note the `;` symbol after 1:7; it is necessary to transform the object into a true vector, instead of a `range` object. We will talk more about `types` later.
 
 ::: {.callout-note icon=false}
 ## Problem 
@@ -41,6 +39,18 @@ v = [1:2:999;]
 sum(v)
 ```
 :::
+
+We can also create vectors of anything:
+
+```{julia}
+v = ["julia", "is", "nice!"]
+```
+
+and sort them
+
+```{julia}
+sort(v)
+```
 
 ## List comprehensions
 
@@ -142,7 +152,78 @@ sum(1:100)^2 - sum((1:100).^2)
 :::
 
 
-## Operations on vectors
+## Common operations on vectors
 
 We can do many things with vectors.
 
+### Sorting
+
+### filtering
+
+### Applying functions
+
+### Intersecting
+
+## Case study: solving number-theory problems
+
+### Prime numbers
+
+::: {.callout-note icon=false}
+## Problem 
+
+Write a function that find all the prime numbers up to $n$.
+:::
+
+::: {.callout-tip icon=false}
+## Solution
+
+Let's use the Sieve of Erastothenes algorithm to do that.
+
+```{julia}
+"""
+Return a vector with all primes up to `n` using the
+sieve of Eratosthenes algorithm.
+"""
+function sieve_of_eratosthenes(n::Integer)
+    sieve = trues(n)  # Create a boolean vector to mark primes
+    
+    # Set the multiples of primes as false (not prime)
+    for i in 2:isqrt(n) # iterate until the integer part of sqrt(2)
+
+    # if the number is not a multiple,
+      if sieve[i] == true
+
+      # iterate trough its multiples and set then to false
+        for j in i^2:i:n
+          sieve[j] = false
+        end
+      end
+    end
+    
+    primes = filter(x -> sieve[x], 2:n)  # Filter out non-primes
+    
+    return primes
+end;
+```
+
+```{julia}
+sieve_of_eratosthenes(100) |> string
+```
+
+:::
+
+### Collatz conjecture
+
+The Collatz conjecture etc.
+
+```{julia}
+function next_step(n::Integer)
+    n == 1 && return(1)
+
+    if iseven(n)        
+        div(n, 2)
+    else
+        3*n + 1
+    end
+end;
+```

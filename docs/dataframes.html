@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="G. Vituri">
-<meta name="dcterms.date" content="2023-06-27">
 
-<title>Exploring Julia</title>
+<title>Exploring Julia - 4&nbsp; Dataframes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./performance.html" rel="next">
+<link href="./functions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dataframes.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dataframes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -135,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -163,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dataframes.html" class="sidebar-item-text sidebar-link">
+  <a href="./dataframes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dataframes</span></span></a>
   </div>
 </li>
@@ -196,69 +195,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
-  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics">Basics</a>
-  <ul class="collapse">
-  <li><a href="#vectors-and-functions" id="toc-vectors-and-functions" class="nav-link" data-scroll-target="#vectors-and-functions">Vectors and functions</a></li>
-  <li><a href="#dataframes" id="toc-dataframes" class="nav-link" data-scroll-target="#dataframes">Dataframes</a></li>
-  </ul></li>
-  <li><a href="#images" id="toc-images" class="nav-link" data-scroll-target="#images">Images</a>
-  <ul class="collapse">
-  <li><a href="#manipulating-images" id="toc-manipulating-images" class="nav-link" data-scroll-target="#manipulating-images">Manipulating images</a></li>
-  <li><a href="#ocr-to-read-texts-in-images" id="toc-ocr-to-read-texts-in-images" class="nav-link" data-scroll-target="#ocr-to-read-texts-in-images">OCR to read texts in images</a></li>
-  </ul></li>
-  <li><a href="#ploting" id="toc-ploting" class="nav-link" data-scroll-target="#ploting">Ploting</a>
-  <ul class="collapse">
-  <li><a href="#observables" id="toc-observables" class="nav-link" data-scroll-target="#observables">Observables</a></li>
-  </ul></li>
-  <li><a href="#neural-networks" id="toc-neural-networks" class="nav-link" data-scroll-target="#neural-networks">Neural networks</a>
-  <ul class="collapse">
-  <li><a href="#flux-and-lux" id="toc-flux-and-lux" class="nav-link" data-scroll-target="#flux-and-lux">Flux and Lux</a></li>
-  <li><a href="#dataloaders" id="toc-dataloaders" class="nav-link" data-scroll-target="#dataloaders">Dataloaders</a></li>
-  </ul></li>
-  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning">Machine learning</a>
-  <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">??</a></li>
-  </ul></li>
-  <li><a href="#topological-data-analysis" id="toc-topological-data-analysis" class="nav-link" data-scroll-target="#topological-data-analysis">Topological Data Analysis</a>
-  <ul class="collapse">
-  <li><a href="#mapper-like-methods" id="toc-mapper-like-methods" class="nav-link" data-scroll-target="#mapper-like-methods">Mapper-like methods</a></li>
-  <li><a href="#persistent-homology" id="toc-persistent-homology" class="nav-link" data-scroll-target="#persistent-homology">Persistent homology</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exploring Julia</h1>
-<p class="subtitle lead">A problem-solving approach</p>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dataframes</span></h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-body">
+<div class="quarto-title-meta column-page-right">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>G. Vituri </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 27, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -268,61 +220,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This book is a collection of things I’ve learned while exploring Julia; it is full of examples and recommendation of packages.</p>
-<p>I’ll try to solve many problems to clarify some principles</p>
-</section>
-<section id="basics" class="level1">
-<h1>Basics</h1>
-<section id="vectors-and-functions" class="level2">
-<h2 class="anchored" data-anchor-id="vectors-and-functions">Vectors and functions</h2>
-</section>
-<section id="dataframes" class="level2">
-<h2 class="anchored" data-anchor-id="dataframes">Dataframes</h2>
-</section>
-</section>
-<section id="images" class="level1">
-<h1>Images</h1>
-<section id="manipulating-images" class="level2">
-<h2 class="anchored" data-anchor-id="manipulating-images">Manipulating images</h2>
-</section>
-<section id="ocr-to-read-texts-in-images" class="level2">
-<h2 class="anchored" data-anchor-id="ocr-to-read-texts-in-images">OCR to read texts in images</h2>
-</section>
-</section>
-<section id="ploting" class="level1">
-<h1>Ploting</h1>
-<section id="observables" class="level2">
-<h2 class="anchored" data-anchor-id="observables">Observables</h2>
-</section>
-</section>
-<section id="neural-networks" class="level1">
-<h1>Neural networks</h1>
-<section id="flux-and-lux" class="level2">
-<h2 class="anchored" data-anchor-id="flux-and-lux">Flux and Lux</h2>
-</section>
-<section id="dataloaders" class="level2">
-<h2 class="anchored" data-anchor-id="dataloaders">Dataloaders</h2>
-</section>
-</section>
-<section id="machine-learning" class="level1">
-<h1>Machine learning</h1>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">??</h2>
-</section>
-</section>
-<section id="topological-data-analysis" class="level1">
-<h1>Topological Data Analysis</h1>
-<section id="mapper-like-methods" class="level2">
-<h2 class="anchored" data-anchor-id="mapper-like-methods">Mapper-like methods</h2>
-</section>
-<section id="persistent-homology" class="level2">
-<h2 class="anchored" data-anchor-id="persistent-homology">Persistent homology</h2>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -712,12 +611,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
+      <a href="./functions.html" class="pagination-link  aria-label=" &lt;span="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="<span class='chapter-number'>1</span>&nbsp; <span class='chapter-title'>Installation</span>">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./performance.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>Performance</span>">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Performance</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

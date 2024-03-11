@@ -1,17 +1,33 @@
 project:
   type: book
   output-dir: docs
+  preview: 
+    port: 4200
+    browser: true
+
+
+jupyter: julia-1.10
+
+execute:
+  freeze: auto  # re-render only when source changes
+  cache: true
 
 book:
   title: "Exploring Julia"
   subtitle: "A problem-solving approach"
+  reader-mode: true
   author: "G. Vituri"
   date: "2023-06-27"
+  site-url: https://vituri.github.io/exploring_julia/
+  repo-url: https://github.com/vituri/exploring_julia
+  downloads: [pdf, epub]
+
   chapters:
     - index.qmd
     - intro.qmd
     - part: "Basics"
     - vectors.qmd
+    - dictionaries.qmd
     - functions.qmd
     - dataframes.qmd
     - performance.qmd
@@ -27,8 +43,10 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    css: style.css
+    code-link: true
+    page-layout: full
+    max-width: 90vw
+    preview-links: true
   pdf:
     documentclass: scrreprt
-
-editor: visual
-

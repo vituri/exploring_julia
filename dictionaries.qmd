@@ -1,0 +1,4 @@
+# Dictionary
+
+A dictionary is like a vector with a different way of indexing its elements: vectors are indexed using integers (starting with 1), while dictionaries can be indexed using strings or any other object.
+

@@ -4,105 +4,150 @@
     "href": "index.html",
     "title": "Exploring Julia",
     "section": "",
-    "text": "Preface\nThis book is a collection of things I’ve learned while exploring Julia; it is full of examples and recommendation of packages.\nI’ll try to solve many problems to clarify some principles"
+    "text": "Preface\nThis book is a collection of things I’ve learned while exploring Julia; it is full of examples and recommendation of packages.\nI’ll try to solve many problems to clarify some principles",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#vectors-and-functions",
     "href": "index.html#vectors-and-functions",
     "title": "Exploring Julia",
     "section": "Vectors and functions",
-    "text": "Vectors and functions"
+    "text": "Vectors and functions",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#dataframes",
     "href": "index.html#dataframes",
     "title": "Exploring Julia",
     "section": "Dataframes",
-    "text": "Dataframes"
+    "text": "Dataframes",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#manipulating-images",
     "href": "index.html#manipulating-images",
     "title": "Exploring Julia",
     "section": "Manipulating images",
-    "text": "Manipulating images"
+    "text": "Manipulating images",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#ocr-to-read-texts-in-images",
     "href": "index.html#ocr-to-read-texts-in-images",
     "title": "Exploring Julia",
     "section": "OCR to read texts in images",
-    "text": "OCR to read texts in images"
+    "text": "OCR to read texts in images",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#observables",
     "href": "index.html#observables",
     "title": "Exploring Julia",
     "section": "Observables",
-    "text": "Observables"
+    "text": "Observables",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#flux-and-lux",
     "href": "index.html#flux-and-lux",
     "title": "Exploring Julia",
     "section": "Flux and Lux",
-    "text": "Flux and Lux"
+    "text": "Flux and Lux",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#dataloaders",
     "href": "index.html#dataloaders",
     "title": "Exploring Julia",
     "section": "Dataloaders",
-    "text": "Dataloaders"
+    "text": "Dataloaders",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#section",
     "href": "index.html#section",
     "title": "Exploring Julia",
     "section": "??",
-    "text": "??"
+    "text": "??",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#mapper-like-methods",
     "href": "index.html#mapper-like-methods",
     "title": "Exploring Julia",
     "section": "Mapper-like methods",
-    "text": "Mapper-like methods"
+    "text": "Mapper-like methods",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#persistent-homology",
     "href": "index.html#persistent-homology",
     "title": "Exploring Julia",
     "section": "Persistent homology",
-    "text": "Persistent homology"
+    "text": "Persistent homology",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "intro.html",
     "href": "intro.html",
     "title": "1  Installation",
     "section": "",
-    "text": "use juliaup\nvscode\nsearch for help"
+    "text": "use juliaup\nvscode\nsearch for help",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation</span>"
+    ]
   },
   {
     "objectID": "vectors.html#list-comprehensions",
     "href": "vectors.html#list-comprehensions",
     "title": "2  Vectors",
-    "section": "2.1 List comprehensions",
-    "text": "2.1 List comprehensions\nList comprehensions are a nice way to write vectors:\n\n[x^2 for x ∈ 1:5]\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\n\n\nand they resemble a lot the mathematical notation of sets:\n\\[\n\\{x^2 \\; \\text{for } x \\in \\{1, \\ldots, 5 \\} \\}\n\\]\nYou can specify conditions on list comprehensions:\n\n[x^2 for x ∈ 1:10 if (x % 2 == 0)]\n\n5-element Vector{Int64}:\n   4\n  16\n  36\n  64\n 100\n\n\n\n\n\n\n\n\nProblem (Project Euler problem 1)\n\n\n\nFind the sum of all the multiples of \\(3\\) or \\(5\\) below \\(1000\\).\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\nv = [x for x ∈ 1:999 if (x % 3 == 0 || x % 5 == 0)]\nsum(v)\n\n233168"
+    "section": "",
+    "text": "Problem (Project Euler problem 1)\n\n\n\nFind the sum of all the multiples of \\(3\\) or \\(5\\) below \\(1000\\).\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\nv = [x for x ∈ 1:999 if (x % 3 == 0 || x % 5 == 0)]\nsum(v)\n\n233168",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
   },
   {
     "objectID": "vectors.html#broadcasting",
     "href": "vectors.html#broadcasting",
     "title": "2  Vectors",
     "section": "2.2 Broadcasting",
-    "text": "2.2 Broadcasting\nBroadcast is apply a function to each element of a vector (or iterable object).\nSuppose we have this function:\n\nsquare(x::Integer) = x^2;\n\nand\n\nv = [1:5;]\n\n5-element Vector{Int64}:\n 1\n 2\n 3\n 4\n 5\n\n\nThen we can apply it to each element of a vector in the following ways:\n\nusing list comprehensions:\n\n\n[square(x) for x ∈ v]\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\n\n\n\nusing the map operator:\n\n\nmap(square, v)\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\n\n\n\nusing the broadcast operator with the dot syntax:\n\n\nsquare.(v)\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\n\n\nFor functions that are called by a symbol (like +, ^, etc.) we have to put the dot before the symbol, like this:\n\n[1:5;] .* 5\n\n5-element Vector{Int64}:\n  5\n 10\n 15\n 20\n 25\n\n\n\n\n\n\n\n\nProblem (Project Euler problem 6)\n\n\n\n\nThe sum of the squares of the first ten natural numbers is \\(1^2+ 2 ^2+ \\dots + 10^2 = 385.\\)\n\n\nThe square of the sum of the first ten natural numbers is \\((1+ 2+ \\dots + 10)^2 = 3025.\\)\n\n\nHence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is \\(3025-385 = 2640.\\)\n\n\nFind the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\nsum(1:100)^2 - sum((1:100).^2)\n\n25164150"
+    "text": "2.2 Broadcasting\nBroadcast is apply a function to each element of a vector (or iterable object).\nSuppose we have this function:\n\nsquare(x::Integer) = x^2;\n\nand\n\nv = [1:5;]\n\n5-element Vector{Int64}:\n 1\n 2\n 3\n 4\n 5\n\n\nThen we can apply it to each element of a vector in the following ways:\n\nusing list comprehensions:\n\n\n[square(x) for x ∈ v]\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\n\n\n\nusing the map operator:\n\n\nmap(square, v)\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\n\n\n\nusing the broadcast operator with the dot syntax:\n\n\nsquare.(v)\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\n\n\nFor functions that are called by a symbol (like +, ^, etc.) we have to put the dot before the symbol, like this:\n\n[1:5;] .* 5\n\n5-element Vector{Int64}:\n  5\n 10\n 15\n 20\n 25\n\n\n\n\n\n\n\n\nProblem (Project Euler problem 6)\n\n\n\n\nThe sum of the squares of the first ten natural numbers is \\(1^2+ 2 ^2+ \\dots + 10^2 = 385.\\)\n\n\nThe square of the sum of the first ten natural numbers is \\((1+ 2+ \\dots + 10)^2 = 3025.\\)\n\n\nHence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is \\(3025-385 = 2640.\\)\n\n\nFind the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\nsum(1:100)^2 - sum((1:100).^2)\n\n25164150",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
   },
   {
     "objectID": "vectors.html#operations-on-vectors",
     "href": "vectors.html#operations-on-vectors",
     "title": "2  Vectors",
     "section": "2.3 Operations on vectors",
-    "text": "2.3 Operations on vectors\nWe can do many things with vectors."
+    "text": "2.3 Operations on vectors\nWe can do many things with vectors.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
   },
   {
     "objectID": "functions.html#keywords",
@@ -145,5 +190,45 @@
     "title": "References",
     "section": "",
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "dictionaries.html",
+    "href": "dictionaries.html",
+    "title": "3  Dictionary",
+    "section": "",
+    "text": "A dictionary is like a vector with a different way of indexing its elements: vectors are indexed using integers (starting with 1), while dictionaries can be indexed using strings or any other object.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Dictionary</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html",
+    "href": "vectors.html",
+    "title": "2  Vectors",
+    "section": "",
+    "text": "2.1 List comprehensions\nList comprehensions are a nice way to write vectors:\n[x^2 for x ∈ 1:5]\n\n5-element Vector{Int64}:\n  1\n  4\n  9\n 16\n 25\nand they resemble a lot the mathematical notation of sets:\n\\[\n\\{x^2 \\; \\text{for } x \\in \\{1, \\ldots, 5 \\} \\}\n\\]\nYou can specify conditions on list comprehensions:\n[x^2 for x ∈ 1:10 if (x % 2 == 0)]\n\n5-element Vector{Int64}:\n   4\n  16\n  36\n  64\n 100",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html#common-operations-on-vectors",
+    "href": "vectors.html#common-operations-on-vectors",
+    "title": "2  Vectors",
+    "section": "2.3 Common operations on vectors",
+    "text": "2.3 Common operations on vectors\nWe can do many things with vectors.\n\n2.3.1 Sorting\n\n\n2.3.2 filtering\n\n\n2.3.3 Applying functions\n\n\n2.3.4 Intersecting",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html#case-study-solving-number-theory-problems",
+    "href": "vectors.html#case-study-solving-number-theory-problems",
+    "title": "2  Vectors",
+    "section": "2.4 Case study: solving number-theory problems",
+    "text": "2.4 Case study: solving number-theory problems\n\n2.4.1 Prime numbers\n\n\n\n\n\n\nProblem\n\n\n\nWrite a function that find all the prime numbers up to \\(n\\).\n\n\n\n\n\n\n\n\nSolution\n\n\n\nLet’s use the Sieve of Erastothenes algorithm to do that.\n\n\"\"\"\nReturn a vector with all primes up to `n` using the\nsieve of Eratosthenes algorithm.\n\"\"\"\nfunction sieve_of_eratosthenes(n::Integer)\n    sieve = trues(n)  # Create a boolean vector to mark primes\n    \n    # Set the multiples of primes as false (not prime)\n    for i in 2:isqrt(n) # iterate until the integer part of sqrt(2)\n\n    # if the number is not a multiple,\n      if sieve[i] == true\n\n      # iterate trough its multiples and set then to false\n        for j in i^2:i:n\n          sieve[j] = false\n        end\n      end\n    end\n    \n    primes = filter(x -&gt; sieve[x], 2:n)  # Filter out non-primes\n    \n    return primes\nend;\n\n\nsieve_of_eratosthenes(100) |&gt; string\n\n\"[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]\"\n\n\n\n\n\n\n2.4.2 Collatz conjecture\nThe Collatz conjecture etc.\n\nfunction next_step(n::Integer)\n    n == 1 && return(1)\n\n    if iseven(n)        \n        div(n, 2)\n    else\n        3*n + 1\n    end\nend\n\nnext_step (generic function with 1 method)\n\n\n\nnext_step(3)\n\n10\n\n\n\nDict(\"a\" =&gt; 1)\n\nDict{String, Int64} with 1 entry:\n  \"a\" =&gt; 1",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Vectors</span>"
+    ]
   }
 ]
